@@ -40,9 +40,9 @@ db.connect((err) => {
       const rowCount = result[0].count;
       if (rowCount === 0) {
         const seedProductsData = `
-          INSERT INTO products (name, price, image, description, quantity, ratings) VALUES
-          ('Test lods'	2000.00	'hello.png'	'HAHAHA' 'TEST'	3),
-        `;
+        INSERT INTO products (name, price, image, description, quantity, ratings) VALUES
+        ('Test Product', 2000.00, 'hello.png', 'HAHAHA', 5, 3);
+      `;
         db.query(seedProductsData, (err) => {
           if (err) {
             throw err;
