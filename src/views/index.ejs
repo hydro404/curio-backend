@@ -1,0 +1,39 @@
+<!-- create a simple login form with email and password -->
+<form>
+  <input type="text" name="email" placeholder="email" />
+  <input type="password" name="password" placeholder="password" />
+  <button type="submit">Login</button>
+  <span id="err-msg"></span>
+</form>
+
+<!-- jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // get the form element
+  const form = document.querySelector('form');
+
+  // add an event listener to the form
+  form.addEventListener('submit', async (e) => {
+    // prevent the default form submission
+    e.preventDefault();
+
+    // get the email and password values
+    const email = form.email.value;
+    const password = form.password.value;
+
+    //AJAX here
+
+    $.ajax({
+      type: 'POST',
+      url: '/signin',
+      data: { email, password },
+      success: function (data) {
+        $('#err-msg').text(data.message)
+      },
+      error: function (error) {
+        $('#err-msg').text(error.responseJSON.error)
+        }
+    });
+
+  });
+</script>
