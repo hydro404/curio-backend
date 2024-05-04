@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
+const cors = require('cors');
 require('dotenv').config();
 
 //view engine
 app.set('view engine', 'ejs');
 //view is in the src/views folder
 app.set('views', './src/views');
-
+app.use(cors());
 
 const productRoutes = require('./src/routes/productRoutes.js');
 const authRoutes = require('./src/routes/authRoutes.js');

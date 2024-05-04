@@ -17,8 +17,8 @@ function signIn(email, password, callback) {
 
 function signUp(user, callback) {
     const { name, email, password } = user;
-    const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
-    db.query(sql, [name, email, password], (err, result) => {
+    const sql = 'INSERT INTO users (email, password) VALUES (?, ?)';
+    db.query(sql, [email, password], (err, result) => {
       if (err) {
         return callback(err, null);
       }
