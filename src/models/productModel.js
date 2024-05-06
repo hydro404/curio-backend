@@ -1,13 +1,26 @@
 // Define the Product class
 class Product {
-    constructor(name, price, images, description, quantity, ratings) {
-      this.name = name;
-      this.price = price;
-      this.images = images;
-      this.description = description;
-      this.quantity = quantity;
-      this.ratings = ratings;
-    }
+  constructor(
+    id,
+    name,
+    category,
+    description,
+    stock,
+    images,
+    price,
+    ratings,
+    comments
+  ) {
+    this.id = id;
+    this.name = name;
+    this.category = category;
+    this.description = description;
+    this.stock = stock;
+    this.images = images;
+    this.price = price;
+    this.ratings = ratings;
+    this.comments = comments;
+  }
 }
 
 module.exports = Product;

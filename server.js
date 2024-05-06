@@ -24,6 +24,19 @@ app.get('/', (req, res) => {
 app.use(productRoutes);
 app.use(authRoutes);
 
+
+
+// const db = require('/src/controllers/db.js');
+
+// const sql = `SELECT * FROM products`;
+
+// db.query(sql, (err, results) => {
+//   if (err) {
+//     return console.error(err.message);
+//   }
+//   console.log(results);
+// });
+
 app.listen(process.env.PORT, () => {
     console.log(`Server listening on localhost:${process.env.PORT}`);
 });
